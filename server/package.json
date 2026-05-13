@@ -1,0 +1,13 @@
+{
+  "name": "event-registration-server",
+  "version": "1.0.0",
+  "description": "Online Event Registration System - Backend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["mern", "event", "registration"],
+  "author": "",
+  "license": "ISC"
+}
