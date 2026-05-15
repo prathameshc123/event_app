@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
+// API Routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/registrations', require('./routes/registrationRoutes'));
 
@@ -29,11 +29,11 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Serve frontend build files
+// Serve frontend static files
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-// React Router support
-app.get('*', (req, res) => {
+// React Router support (Express 5 compatible)
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
